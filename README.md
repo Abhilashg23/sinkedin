@@ -3,6 +3,8 @@
 
 A platform where people share their career missteps, mistakes, and the lessons they’ve learned — because real stories of failure are often more powerful than polished success stories.
 
+![Built with Bolt.new](https://img.shields.io/badge/Built%20with-Bolt.new-blueviolet?style=flat-square)
+
 [![Live Demo](https://img.shields.io/badge/Live%20Demo-Netlify-blue?style=flat-square&logo=netlify)](https://sinkedin-beta.netlify.app/)
 
 ---
