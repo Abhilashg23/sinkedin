@@ -1,0 +1,286 @@
+/* Global styles for SinkedIn platform */
+/* Built with Tailwind CSS and custom design tokens for professional, empathetic UI */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base layer - foundational styles with Inter font and smooth interactions */
+@layer base {
+  /* Apply Inter font family globally for modern, readable typography */
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+    scroll-behavior: smooth;
+  }
+  
+  /* Improve text rendering for crisp, professional appearance */
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #fff7ed; /* Cream background for warmth */
+  }
+  
+  /* Ensure consistent box-sizing for predictable layouts */
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+}
+
+/* Components layer - reusable component styles with consistent branding */
+@layer components {
+  /* Line clamp utilities for consistent text truncation across story cards */
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  /* Focus styles for accessibility - consistent focus rings throughout app */
+  .focus-ring {
+    @apply focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:ring-offset-primary-50;
+  }
+  
+  /* Primary button style - soft orange with hover effects for warmth and trust */
+  .btn-primary {
+    @apply bg-primary-500 text-white px-6 py-3 rounded-md font-bold hover:bg-primary-600 
+           transform hover:scale-105 transition-all duration-200 focus-ring 
+           active:scale-95 shadow-sm hover:shadow-md;
+  }
+  
+  /* Secondary button style - maintains brand consistency with subtle styling */
+  .btn-secondary {
+    @apply bg-white text-primary-600 border border-neutral-300 px-6 py-3 rounded-md 
+           font-bold hover:bg-primary-50 hover:border-primary-400 
+           transform hover:scale-105 transition-all duration-200 focus-ring 
+           active:scale-95 shadow-sm hover:shadow-md;
+  }
+  
+  /* Card component style - consistent elevation and spacing for content containers */
+  .card {
+    @apply bg-white rounded-xl shadow-sm border border-neutral-200 p-6 
+           hover:shadow-lg hover:scale-[1.02] transition-all duration-300 ease-out;
+  }
+  
+  /* Navigation link style - smooth hover effects for better UX */
+  .nav-link {
+    @apply flex items-center space-x-2 text-neutral-700 hover:text-primary-500 
+           transform hover:scale-105 transition-all duration-200 font-medium;
+  }
+  
+  /* Input field style - consistent form styling with focus states */
+  .input-field {
+    @apply w-full px-4 py-3 border border-neutral-300 rounded-md 
+           focus:ring-2 focus:ring-primary-500 focus:border-primary-500 
+           transition-colors duration-200 bg-white;
+  }
+  
+  /* Error input variant - clear visual feedback for validation errors */
+  .input-error {
+    @apply border-red-300 bg-red-50 focus:ring-red-500 focus:border-red-500;
+  }
+  
+  /* Page container - consistent spacing and max-width for readability */
+  .page-container {
+    @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8;
+  }
+  
+  /* Section spacing - consistent vertical rhythm throughout pages */
+  .section-spacing {
+    @apply mb-12;
+  }
+}
+
+/* Utilities layer - custom utility classes for specific design needs */
+@layer utilities {
+  /* Animation utilities for micro-interactions that enhance user experience */
+  .animate-fade-in {
+    animation: fadeIn 0.4s ease-in-out;
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 0.4s ease-out;
+  }
+  
+  .animate-scale-in {
+    animation: scaleIn 0.3s ease-out;
+  }
+  
+  /* Instagram-like heart animations */
+  .animate-heart-beat {
+    animation: heartBeat 0.3s ease-in-out;
+  }
+  
+  .animate-heart-pop {
+    animation: heartPop 0.3s ease-in-out;
+  }
+  
+  .animate-float-heart {
+    animation: floatHeart 1s ease-out forwards;
+  }
+  
+  /* Hover scale utility for interactive elements */
+  .hover-scale {
+    @apply transform hover:scale-105 transition-transform duration-200;
+  }
+  
+  /* Text gradient utility for special headings */
+  .text-gradient {
+    background: linear-gradient(135deg, #f97316, #ea580c);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  /* Glass effect for modern UI elements */
+  .glass-effect {
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.9);
+  }
+}
+
+/* Custom keyframes for smooth, professional animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Instagram-like heart animation keyframes */
+@keyframes heartBeat {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes heartPop {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.3);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes floatHeart {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+  15% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -80%) scale(0.8);
+  }
+}
+
+/* Custom scrollbar styling for webkit browsers - maintains brand consistency */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #fff7ed; /* Cream background */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d1d5db; /* Gray for secondary elements */
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af; /* Darker gray on hover */
+}
+
+/* Selection styling - brand-consistent text selection */
+::selection {
+  background-color: #fed7aa; /* Light orange */
+  color: #9a3412; /* Dark orange */
+}
+
+/* Print styles for accessibility */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  body {
+    background: white !important;
+  }
+}
+
+/* High contrast mode support for accessibility */
+@media (prefers-contrast: high) {
+  .btn-primary {
+    @apply border-2 border-primary-800;
+  }
+  
+  .card {
+    @apply border-2 border-neutral-400;
+  }
+}
+
+/* Reduced motion support for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  .hover-scale {
+    transform: none !important;
+  }
+  
+  .animate-heart-beat,
+  .animate-heart-pop,
+  .animate-float-heart {
+    animation: none !important;
+  }
+}
